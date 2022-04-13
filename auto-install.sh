@@ -46,7 +46,6 @@ cd ..
     wget https://raw.githubusercontent.com/$gitpath/main/gitclone/minstall.sh
     chmod +x minstall.sh
     ./minstall.sh
-    rm -rf minstall.sh
     chmod +x m4.sh
     history -c
     ./m4.sh
