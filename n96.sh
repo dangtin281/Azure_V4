@@ -21,8 +21,8 @@
     IMAGES96="nvidia:tensorflow_from_nvidia:gen2_21-06-0:latest"
     adminusername=azureuser
     adminpassword=$Upassw
-
     az group create --location $locationset --resource-group "$tmpvmname"_group
+    az vm image terms accept --urn "$IMAGES96"
     sleep 2
     az vm create --resource-group "$tmpvmname"_group \
         --name $tmpvmname \

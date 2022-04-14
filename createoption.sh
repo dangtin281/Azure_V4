@@ -110,6 +110,14 @@ case $choice in
 3) imagess=Canonical:UbuntuServer:18_04-lts-gen2:latest
     break;;
 4) imagess=nvidia:tensorflow_from_nvidia:gen2_21-06-0:latest
+    file="urn.txt"
+		if [ -f "$file" ]
+            then
+                echo "$file found OK."
+        else
+            echo "$file not found."
+            az vm image terms accept --urn "$imagess" > urn.txt
+	    fi
     break;;
 
 Q|q) quit=y;; 
