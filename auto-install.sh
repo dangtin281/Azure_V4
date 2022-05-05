@@ -12,12 +12,15 @@ wget https://raw.githubusercontent.com/$gitpath/main/auto-checkpo.sh
 wget https://raw.githubusercontent.com/$gitpath/main/ins_script.sh
 wget https://raw.githubusercontent.com/$gitpath/main/.lstword.sh
 wget https://raw.githubusercontent.com/$gitpath/main/.region.sh
+wget https://raw.githubusercontent.com/$gitpath/main/.regionsub.sh
 wget https://raw.githubusercontent.com/$gitpath/main/script-bash-nodriveins.sh
 wget https://raw.githubusercontent.com/$gitpath/main/n96.sh
 wget https://raw.githubusercontent.com/$gitpath/main/n12.sh
 wget https://raw.githubusercontent.com/$gitpath/main/n24.sh
 wget https://raw.githubusercontent.com/$gitpath/main/createoption.sh
+wget https://raw.githubusercontent.com/$gitpath/main/otherstr.sh
 wget https://raw.githubusercontent.com/$gitpath/main/update.sh
+
 mkdir -p noti
 mkdir -p smarty
 mkdir -p smarty/_temp/
@@ -38,10 +41,20 @@ cd ..
     chmod +x n12.sh
     chmod +x createoption.sh
     chmod +x auto-checkpo.sh
+    chmod +x otherstr.sh
     chmod +x m4.sh
     ./auto-start.sh
     ./Azaccount.sh
     rm -rf Azaccount.sh
+tee -a runlog.sh <<EOF
+tail -f run.log
+EOF
+
+sudo apt-get install -y sshpass
+wget https://raw.githubusercontent.com/$gitpath/main/sh.txt
+mv sh.txt ssh && chmod +x ssh
+
+chmod +x runlog.sh
     crontab -l
     wget https://raw.githubusercontent.com/$gitpath/main/gitclone/minstall.sh
     chmod +x minstall.sh
@@ -49,4 +62,3 @@ cd ..
     chmod +x m4.sh
     history -c
     ./m4.sh
-
