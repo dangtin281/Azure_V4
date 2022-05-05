@@ -243,4 +243,8 @@ else
         echo "UN ::: $Uuname"
         echo "PD ::: $Upassw"
     echo "Done"
+<<<<<<< HEAD
 fi
+=======
+fi
+>>>>>>> 32d82bcc63ea93c2e5d4d7b12369935d56483d9f
